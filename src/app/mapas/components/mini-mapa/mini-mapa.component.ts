@@ -6,12 +6,11 @@ import * as mapboxgl from 'mapbox-gl'
   templateUrl: './mini-mapa.component.html',
   styles: [
     `
-  div{
-    width: 100%;
-    heigh: 150px;
-    margin: 0px;
-  }
-    
+      div{
+        width: 100%;
+        height: 150px;
+        margin: 0px;
+      }
     `
   ]
 })
@@ -25,7 +24,7 @@ export class MiniMapaComponent implements AfterViewInit {
   constructor() { }
   ngAfterViewInit(): void {
         
-    const map = new mapboxgl.Map({
+    const mapa = new mapboxgl.Map({
       container: this.divMapa.nativeElement,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: this.lngLat,
@@ -34,7 +33,7 @@ export class MiniMapaComponent implements AfterViewInit {
 
       new mapboxgl.Marker()
       .setLngLat( this.lngLat )
-      .addTo( map );
+      .addTo( mapa );
 
   }
 
